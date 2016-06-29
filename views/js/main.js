@@ -491,6 +491,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  // Calculate scrollTop outside of loop
   var items = document.querySelectorAll('.mover');
   var scrollTopN = document.body.scrollTop / 1250
   for (var i = 0; i < items.length; i++) {
@@ -515,6 +516,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // only calculate enough pizzas to fill the background
   for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
